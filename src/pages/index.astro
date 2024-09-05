@@ -1,11 +1,13 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+import Toaster from '@/components/ui/toast/Toaster.vue'
 import Questions from '@/components/Questions.vue';
 ---
 
 <Layout title="Welcome to Astro.">
+	<Toaster client:load />
 	<main>
-		<section class="py-8 lg:py-32 bg-[url('https://pagedone.io/asset/uploads/1691055810.png')] bg-center bg-cover bg-fixed">
+		<section class="py-8 lg:py-32 bg-[url('https://pagedone.io/asset/uploads/1691055810.png')] bg-cover bg-fixed">
 			<div class="mx-auto max-w-7xl min-h-svh px-4 sm:px-6 lg:px-8 relative text-center">
 				<h1 class="max-w-2xl mx-auto text-center font-manrope font-bold text-4xl text-gray-900 mb-5 md:text-5xl leading-[50px]">
 					Envía tu pregunta de forma

@@ -1,12 +1,16 @@
 <script setup lang="ts">
 import { getQuestionsWithAnswerCount } from "@/db/client";
+import CardQuestion from "@/components/CardQuestion.vue";
+import ButtonQuestion from "@/components/ButtonQuestion.vue";
 const questions = await getQuestionsWithAnswerCount();
 </script>
 
 <template>
   <div class="w-full flex flex-col items-center gap-y-3">
+    <ButtonQuestion />
     <div v-if="questions.length > 0" v-for="question in questions" class="w-full flex flex-col items-center">
-        <div class="cursor-pointer bg-white shadow-lg hover:shadow-xl transition-shadow shadow-slate-200/50 hover:shadow-slate-200 p-4 rounded-xl w-full max-w-2xl flex items-center justify-between gap-x-4">
+      <CardQuestion :data="question">
+        <div class="cursor-pointer bg-white shadow-lg hover:shadow-xl transition-shadow shadow-slate-200/50 hover:shadow-slate-200 p-4 rounded-2xl w-full max-w-2xl flex items-center justify-between gap-x-4">
           <p class="text-lg font-semibold text-slate-600 text-left line-clamp-1">{{ question.question }}</p>
           <section class="flex items-center gap-2 text-slate-400">
             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0,0,256,256">
@@ -15,6 +19,7 @@ const questions = await getQuestionsWithAnswerCount();
             <span class="font-semibold">{{ question.answer_count }}</span>
           </section>
         </div>
+      </CardQuestion>
     </div>
     <div v-else>
       <p>No hay preguntas</p>
