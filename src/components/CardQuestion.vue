@@ -97,7 +97,7 @@ async function addAnswer() {
       </SheetHeader>
       <section class="my-4 h-full space-y-2 overflow-auto">
         <div v-if="answers.length > 0" v-for="(answer, index) in answers" :key="index" class="border border-slate-300 p-4 rounded-2xl">
-          <p class="font-semibold text-slate-500 text-sm">Anonimo#2834 - <time class="text-sm font-normal text-slate-400">{{ formatDateSmall(answer.createdAt) }}</time></p>
+          <p class="font-semibold text-slate-500 text-sm">Anonimo - <time class="text-sm font-normal text-slate-400">{{ formatDateSmall(answer.createdAt) }}</time></p>
           <p class="text-slate-500">
             {{ answer.answer }}
           </p>
