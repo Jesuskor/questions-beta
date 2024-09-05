@@ -89,7 +89,7 @@ async function addAnswer() {
     <SheetContent class="flex flex-col justify-between">
       <SheetHeader>
         <SheetDescription>
-          <p class="text-slate-500">{{ formatDate(createdAt) }}</p>
+          <p class="text-slate-500 text-left">{{ formatDate(createdAt) }}</p>
         </SheetDescription>
         <SheetTitle>
           <h2 class="text-2xl text-slate-600 text-left">{{ question }}</h2>
@@ -103,7 +103,7 @@ async function addAnswer() {
           </p>
         </div>
         <div v-else>
-          <p class="bg-slate-100 text-slate-500 p-2 text-center rounded-xl">No hay respuestas</p>
+          <p class="bg-slate-100 text-slate-500 p-2 text-center rounded-2xl">No hay respuestas</p>
         </div>
       </section>
       <SheetFooter>
